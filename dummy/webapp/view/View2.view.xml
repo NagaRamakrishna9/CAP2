@@ -2,7 +2,6 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     controllerName="app.dummy.controller.View2">
-    <Shell id="_IDGenShell1">
         <Page id="_IDGenPage1" title="Home" showNavButton="true" navButtonPress="onNavBack">
             <content>
                 <Text id="_IDGenText" text="Welcome to Inflexion SAP Golden Partner!" />
@@ -63,6 +62,5 @@
                 </Table>
             </content>
         </Page>
-    </Shell>
 </mvc:View>
 
