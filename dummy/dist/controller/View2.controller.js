@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/core/routing/History"],function(e,n){"use strict";return e.extend("app.dummy.controller.View2",{onInit:function(){},onNavBack:function(){var e=n.getInstance();var o=e.getPreviousHash();if(o!==undefined){window.history.go(-1)}else{var t=this.getOwnerComponent().getRouter();t.navTo("view1")}}})});
+//# sourceMappingURL=View2.controller.js.map

@@ -1,0 +1,24 @@
+<mvc:View controllerName="app.dummy.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="_IDGenPage1" title="Details page" showHeader="true">
+        <headerContent>
+            <!-- Back Button in the Header -->
+            <Button id="navBackId" text="Back" press="onNavBack" />
+        </headerContent>
+        <content>
+            <VBox id="_IDGenVBox1" alignItems="Center" justifyContent="Center" height="100%">
+                <FlexBox id="_IDGenFlexBox1" direction="Column" alignItems="Center" justifyContent="Center">
+                    <Title id="_IDGenTitle1" text="sdtfyg" class="sapUiMediumMarginBottom"/>
+                    <Input id="userInput1" placeholder="dsfg" class="sapUiSmallMarginBottom" width="300px"/>
+                    <Input id="passwordInput1" placeholder="Password" type="Password" class="sapUiSmallMarginBottom" width="300px"/>
+                    <HBox id="_IDGenHBox1" class="sapUiSmallMarginBottom">
+                        <items>
+                            <Button id="_IDGenButton2" type="Emphasized" text="Login" press="onLoginPress2" width="300px"/>
+                        </items>
+                    </HBox>
+                </FlexBox>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

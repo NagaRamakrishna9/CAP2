@@ -1,10 +1,10 @@
 <mvc:View controllerName="app.dummy.controller.View1"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
-   <Page id="_IDGenPage" title="Login" showHeader="false">
+   <Page id="_IDGenPage" title="Login page" showHeader="true">
                 <content>
                     <VBox id="_IDGenVBox" alignItems="Center" justifyContent="Center" height="100%">            
-                        <FlexBox id="_IDGenFlexBox1" direction="Column" alignItems="Center" justifyContent="Center">
+                        <FlexBox id="_IDGenFlexBox" direction="Column" alignItems="Center" justifyContent="Center">
                             <Title id="_IDGenTitle" text="Login" class="sapUiMediumMarginBottom"/>
                             <Input id="userInput" placeholder="Username" class="sapUiSmallMarginBottom" width="300px"/>
                             <Input id="passwordInput" placeholder="Password" type="Password" class="sapUiSmallMarginBottom" width="300px"/>

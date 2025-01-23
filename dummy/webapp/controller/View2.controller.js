@@ -1,27 +1,59 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "sap/ui/core/routing/History"
-], function (Controller, History) {
+    "sap/m/MessageToast",
+    "sap/ui/model/json/JSONModel"
+], function (Controller, MessageToast, JSONModel) {
     "use strict";
 
     return Controller.extend("app.dummy.controller.View2", {
-
+        
         onInit: function () {
-            // Initialize your controller if needed
+            // Create a new JSON model
+            var oModel = new JSONModel();
+            // Load data from products.json (located in the same directory as the controller)
+            oModel.loadData("products.json"); // Update path if the file is in a subfolder, e.g., "data/products.json"
+            // Set the model to the view
+            this.getView().setModel(oModel, "products");
         },
 
-        // Navigation function for the Back button
         onNavBack: function () {
-            var oHistory = History.getInstance();
-            var sPreviousHash = oHistory.getPreviousHash();
+            // Navigate back to the previous page
+            history.go(-1);
+        },
 
-            if (sPreviousHash !== undefined) {
-                window.history.go(-1); 
-            } else {
-                // If there's no history, navigate to View1 using the router
-                var oRouter = this.getOwnerComponent().getRouter();
-                oRouter.navTo("view1"); // Replace "view1" with the name of your route to View1
-            }
+        onFilter: function (oEvent) {
+            var sQuery = oEvent.getParameter("newValue");
+            var oFilter = new sap.ui.model.Filter("Price", sap.ui.model.FilterOperator.LE, sQuery);
+            var oBinding = this.byId("idProductsTable").getBinding("items");
+            oBinding.filter(oFilter);
+        },
+
+        onReset: function () {
+            var oTable = this.byId("idProductsTable");
+            oTable.getBinding("items").filter([]);
+        },
+
+        onSort: function () {
+            var oTable = this.byId("idProductsTable");
+            var oBinding = oTable.getBinding("items");
+            var aSorter = [new sap.ui.model.Sorter("Price", false)];
+            oBinding.sort(aSorter);
+        },
+
+        onGroup: function () {
+            var oTable = this.byId("idProductsTable");
+            var oBinding = oTable.getBinding("items");
+            var aGroupSorter = [new sap.ui.model.Sorter("SupplierName", false, true)];
+            oBinding.sort(aGroupSorter);
+        },
+
+        onMenuAction: function (oEvent) {
+            var oItem = oEvent.getParameter("item");
+            var sText = oItem.getText();
+            MessageToast.show("Selected: " + sText);
+        },
+
+        onBeforeMenuOpen: function (oEvent) {
         }
     });
 });

@@ -1,2 +1,2 @@
-sap.ui.define(["sap/ui/core/mvc/Controller"],e=>{"use strict";return e.extend("app.dummy.controller.App",{onInit(){}})});
+sap.ui.define(["sap/ui/core/mvc/Controller"],function(e){"use strict";return e.extend("app.dummy.controller.App",{onInit:function(){var e=this.getOwnerComponent().getRouter();e.initialize()}})});
 //# sourceMappingURL=App.controller.js.map

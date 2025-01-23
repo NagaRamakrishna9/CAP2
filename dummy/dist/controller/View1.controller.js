@@ -1,2 +1,2 @@
-sap.ui.define(["sap/ui/core/mvc/Controller"],e=>{"use strict";return e.extend("app.dummy.controller.View1",{onInit(){}})});
+sap.ui.define(["sap/ui/core/mvc/Controller","sap/m/MessageToast"],function(e,n){"use strict";return e.extend("app.dummy.controller.View1",{onInit:function(){},onLoginPress:function(){var e=this.byId("userInput").getValue();var s=this.byId("passwordInput").getValue();if(e==="admin"&&s==="admin"){n.show("Login successful");this.getOwnerComponent().getRouter().navTo("view2")}else{n.show("Invalid credentials")}}})});
 //# sourceMappingURL=View1.controller.js.map
